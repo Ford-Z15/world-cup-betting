@@ -1,0 +1,7 @@
+# 投注记录（含资金数据，不上传）
+betting-tracker.md
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
