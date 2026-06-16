@@ -4,8 +4,46 @@
 
 ## 安装
 
+### 方法一：插件安装（推荐）
+
 ```bash
 claude plugins install github.com/Ford-Z15/world-cup-betting
+```
+
+安装后 skill 全局可用，Claude Code 在任何项目中都能调用。
+
+### 方法二：全局 skill 安装
+
+将 `SKILL.md` 复制到 Claude Code 的全局 skills 目录：
+
+```bash
+# macOS / Linux
+mkdir -p ~/.claude/skills/world-cup-betting
+cp skills/world-cup-betting/SKILL.md ~/.claude/skills/world-cup-betting/
+
+# Windows (PowerShell)
+New-Item -ItemType Directory -Force -Path $env:USERPROFILE\.claude\skills\world-cup-betting
+Copy-Item skills/world-cup-betting/SKILL.md $env:USERPROFILE\.claude\skills\world-cup-betting\
+```
+
+安装后全局可用，适合不想装整个 plugin 的用户。
+
+### 方法三：项目级安装
+
+在目标项目的 `.claude/skills/` 目录下放置 SKILL.md：
+
+```bash
+mkdir -p .claude/skills/world-cup-betting
+cp skills/world-cup-betting/SKILL.md .claude/skills/world-cup-betting/
+```
+
+仅在当前项目中生效。适合团队项目，不需要每人单独安装。
+
+### 方法四：手动克隆
+
+```bash
+git clone https://github.com/Ford-Z15/world-cup-betting.git
+# 然后使用方法二或方法三将 SKILL.md 链接/复制到对应位置
 ```
 
 ## 触发方式
@@ -30,6 +68,10 @@ claude plugins install github.com/Ford-Z15/world-cup-betting
 - CI 宽度超出 edge 时不下注  
 - 悲观校准 EV 为负不下注
 - 防守信号跨比赛强度环境折扣（S/A/B/C 级）
+
+## 声明
+
+本 skill 的专家对话机制（独立 Agent 并行调用、定制化 prompt、判官汇总、诚实规则）继承自 **[dontbesilent](https://github.com/dontbesilent)** 的 **dbs-chatroom** skill。
 
 ## 结构
 
