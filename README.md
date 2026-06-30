@@ -73,6 +73,16 @@ git clone https://github.com/Ford-Z15/world-cup-betting.git
 
 本 skill 的专家对话机制（独立 Agent 并行调用、定制化 prompt、判官汇总、诚实规则）继承自 **[dontbesilent](https://github.com/dontbesilent)** 的 **dbs-chatroom** skill。
 
+## 更新日志
+
+| 版本 | 日期 | 说明 |
+|------|------|------|
+| **v2.0** | 2026-06-30 | 方法论重构：从概率辩论升级为因子分析。六专家各负责一个因子层（23子因子），新增因子聚合公式、因子交叉验证、因子级赛后复盘 |
+| **v1.1** | 2026-06-16 | 第十一步扩展为8子步骤的完整赛后复盘系统（Brier滚动监控/红区修正/自迭代） |
+| **v1.0** | 2026-06-15 | 初始发布：六专家圆桌+概率模型+EV扫描 |
+
+详见 [CHANGELOG.md](CHANGELOG.md)
+
 ## 结构
 
 ```
